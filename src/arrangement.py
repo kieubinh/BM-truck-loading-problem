@@ -10,4 +10,4 @@ print(item_df)
 print(input_df)
 
 ## optimization
-total_weights = 
+total_cost = 0
