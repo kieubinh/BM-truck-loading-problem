@@ -1,6 +1,6 @@
 # BM Truck Loading Problem
 - Container/Truck Loading Problem or Geometric Assignment Problem.
-- We would like to arrange 4 trucks each day to deliver plasterboards and compound pallets from Knauf.
+- We would like to arrange around 15-20 trips from 4 trucks each day (each truck does 4-5 trips per day taking 2 hours each trip) to deliver plasterboards and compound pallets from Knauf to our Lidcombe and Cabramatta stores.
 
 ## Problem Statement
 Given M containers/trucks (cubic large objects) and N cargos/goods (three-dimensional items) such that:
