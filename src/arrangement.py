@@ -45,23 +45,24 @@ truck_df = truck_df.sort_values(by='Cost')
 # Initialize an empty list to hold the trucks in use
 trucks_in_use = []
 
-# Sort input_df by volume in descending order
-input_df['Volume'] = input_df['Length'] * input_df['Width'] * input_df['Weight']
-input_df = input_df.sort_values(by='Volume', ascending=False)
+# # Sort input_df by volume in descending order
+# # input_df['Volume'] = input_df['Length'] * input_df['Width'] * input_df['Weight']
+# # input_df = input_df.sort_values(by='Volume', ascending=False)
 
 # For each item in input_df
 for _, item in input_df.iterrows():
-    print(item)
+    # print(item)
     for _ in range(item['Quantity']):        
         # Try to place the item in an existing truck
+        # print(trucks_in_use)
         for truck in trucks_in_use:
-            if (truck['remaining_length'] >= item['Length'] and
-                truck['remaining_width'] >= item['Width'] and
-                truck['remaining_weight'] >= item['Weight']):
-                truck['remaining_length'] -= item['Length']
-                truck['remaining_width'] -= item['Width']
-                truck['remaining_weight'] -= item['Weight']
-                break
+            if (truck['remaining_weight'] >= item['Weight']):
+                if (truck['remaining_height'] >= item['Height']):
+                    truck['remaining_height'] -= item['Height']
+                    truck['remaining_weight'] -= item['Weight']
+                    break
+                else:
+
         else:
             # If the item couldn't be placed in an existing truck, add a new truck
             for _, truck in truck_df.iterrows():
@@ -75,4 +76,53 @@ for _, item in input_df.iterrows():
                     total_cost += truck['Cost']
                     break
 
+print(len(trucks_in_use))
+# for truck in trucks_in_use:
+#     print(truck)
 print(total_cost)
+
+
+# # For each item in input_df
+# for _, item in input_df.iterrows():
+#     for _ in range(item['Quantity']):
+#         # Try to place the item in an existing truck
+#         for truck in trucks_in_use:
+#             # Check if the item fits in the remaining space
+#             if (truck['remaining_weight'] >= item['Weight']):
+#                 # Try to place the item as far back as possible
+#                 for z in range(truck['remaining_length'] - item['Length'] + 1):
+#                     # Try to place the item as low as possible
+#                     for y in range(truck['remaining_height'] - item['Height'] + 1):
+#                         # Try to place the item as far to the left as possible
+#                         for x in range(truck['remaining_width'] - item['Width'] + 1):
+#                             # If the space is free, place the item
+#                             if is_free(truck, x, y, z, item['Width'], item['Height'], item['Length']):
+#                                 place_item(truck, x, y, z, item['Width'], item['Height'], item['Length'])
+#                                 truck['remaining_length'] -= item['Length']
+#                                 truck['remaining_width'] -= item['Width']
+#                                 truck['remaining_height'] -= item['Height']
+#                                 truck['remaining_weight'] -= item['Weight']
+#                                 break
+#                         else:
+#                             continue
+#                         break
+#                     else:
+#                         continue
+#                     break
+#                 else:
+#                     continue
+#                 break
+#         else:
+#             # If the item couldn't be placed in an existing truck, add a new truck
+#             for _, truck in truck_df.iterrows():
+#                 if (truck['Length'] >= item['Length'] and
+#                     truck['Width'] >= item['Width'] and
+#                     truck['Height'] >= item['Height'] and
+#                     truck['Weight'] >= item['Weight']):
+#                     truck['remaining_length'] = truck['Length'] - item['Length']
+#                     truck['remaining_width'] = truck['Width'] - item['Width']
+#                     truck['remaining_height'] = truck['Height'] - item['Height']
+#                     truck['remaining_weight'] = truck['Weight'] - item['Weight']
+#                     trucks_in_use.append(truck)
+#                     total_cost += truck['Cost']
+#                     break
