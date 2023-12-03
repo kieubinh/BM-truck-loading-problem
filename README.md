@@ -38,7 +38,7 @@ Given M containers/trucks (cubic large objects) and N cargos/goods (three-dimens
 - Output:
   + Yes/No: is possible to load all items to the truck?
         
-## Subproblem 1
+## Subproblem 2
 - Input:
   + Given a truck with capacity of length, width, height and weight.
   + Given a list of items need to load on the truck.
