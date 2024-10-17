@@ -6,7 +6,7 @@
 ## Problem Statement
 Given M containers/trucks (cubic large objects) and N cargos/goods (three-dimensional items) such that:
 -	All cargos/items lie entirely within the containers.
--	The items do not overlap.
+-	The items can not be overlap.
 -	The item on the top of other items must have something at the bottom.
 -	Total weight of the items lying in the containers does not over the capacity of the container
 
