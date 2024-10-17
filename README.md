@@ -26,19 +26,7 @@ Given M containers/trucks (cubic large objects) and N cargos/goods (three-dimens
   +	Height 0.75m / 0.15 = 5 cells	
   +	Weight 2892 kg
 
-## Examples:
-- Input:
-
-- Output:
-
-## Subproblem 1
-- Input:
-  + Given a truck with capacity of length, width, height and weight.
-  + Given a list of items need to deliver.
-- Output:
-  + Yes/No: is possible to load all items to the truck?
-        
-## Subproblem 2
+## Problem:
 - Input:
   + Given a truck with capacity of length, width, height and weight.
   + Given a list of items need to load on the truck.
